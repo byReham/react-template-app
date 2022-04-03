@@ -1,0 +1,87 @@
+{
+  "name": "D-Core",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "engines": {
+    "node": "^16.14.2"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "axios": "^0.26.1",
+    "classnames": "^2.3.1",
+    "formik": "^2.2.9",
+    "i18next": "^21.6.14",
+    "moment": "^2.29.2",
+    "node-sass": "^7.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-dropzone": "^12.0.4",
+    "react-input-mask": "^2.0.4",
+    "react-redux": "^7.2.8",
+    "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "redux-saga": "^1.1.3",
+    "web-vitals": "^2.1.0",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,html,css,less,scss}\"",
+    "install:clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn install && yarn start",
+    "deploy:prod": "yarn build && scp -r build username@domain-server",
+    "prepare": "husky install"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-config-stylelint": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.4.3",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^25.0.0"
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.(css|scss)": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
+}

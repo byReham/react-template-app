@@ -1,0 +1,9 @@
+extends:
+  - stylelint-config-standard
+  - stylelint-config-prettier
+  - stylelint-config-sass-guidelines
+rules:
+  color-no-invalid-hex: true
+  alpha-value-notation: percentage
+  color-function-notation: modern
+  hue-degree-notation: angle

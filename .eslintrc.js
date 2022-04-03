@@ -1,0 +1,101 @@
+module.exports = {
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  parserOptions: {
+    requireConfigFile: false,
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  env: {
+    browser: true,
+    amd: true,
+    es2020: true,
+    node: true,
+    jquery: true,
+    jest: true,
+  },
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  plugins: ['prettier', 'react', 'jsx-a11y', 'import'],
+  extends: ['prettier', 'eslint:recommended', 'plugin:react/recommended', 'plugin:jest/recommended', 'stylelint'],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        trailingComma: 'all',
+        tabWidth: 2,
+        useTabs: false,
+        printWidth: 120,
+        semi: false,
+        singleQuote: true,
+        jsxSingleQuote: false,
+        quoteProps: 'as-needed',
+        bracketSpacing: true,
+        bracketSameLine: true,
+        arrowParens: 'avoid',
+        parser: 'babel',
+        requirePragma: false,
+        insertPragma: false,
+        proseWrap: 'always',
+        endOfLine: 'lf',
+        singleAttributePerLine: true,
+      },
+    ],
+    quotes: [2, 'single'],
+    semi: [2, 'never'],
+    'no-undef': 'off',
+    'no-console': 2,
+    'max-len': [2, 120, 2],
+    'no-param-reassign': 2,
+    'default-case': 2,
+    'no-var': 1,
+    'require-yield': 2,
+    'require-await': 2,
+    'no-useless-catch': 2,
+    'no-implied-eval': 2,
+    'no-empty-pattern': 1,
+    'no-empty-function': 2,
+    'no-constructor-return': 2,
+    'react/react-in-jsx-scope': 0,
+    'react/no-unescaped-entities': 0,
+    eqeqeq: 2,
+    'no-magic-numbers': [
+      2,
+      {
+        ignoreArrayIndexes: true,
+        ignore: [0, 1, 2, 120],
+      },
+    ],
+    'jsx-a11y/anchor-is-valid': 0,
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        'newlines-between': 'always',
+        groups: ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
+        pathGroups: [
+          {
+            pattern: '@biblebox/*',
+            group: 'internal',
+          },
+          {
+            pattern: '@site/**',
+            group: 'internal',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
+      },
+    ],
+  },
+}

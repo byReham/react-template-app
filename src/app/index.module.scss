@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .header {
+    min-height: 60px;
+  }
+
+  .main {
+    flex-shrink: 0;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+}
