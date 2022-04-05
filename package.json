@@ -80,12 +80,10 @@
   },
   "lint-staged": {
     "*.(js|jsx)": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint --fix"
     ],
     "*.(css|scss)": [
-      "stylelint --fix",
-      "prettier --write"
+      "stylelint --fix"
     ]
   }
 }

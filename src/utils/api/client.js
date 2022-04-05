@@ -1,4 +1,4 @@
-const buildApiClient = (gateway) => {
+const buildApiClient = gateway => {
   return {
     get: (url, query) => gateway.get(url, { params: query }),
     post: (url, body, options = {}) => gateway.post(url, body, options),

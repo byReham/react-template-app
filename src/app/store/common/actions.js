@@ -1,4 +1,4 @@
-export const asyncAction = (type) => ({
+export const asyncAction = type => ({
   run: (payload = null) => ({
     type: type.RUN,
     payload,
@@ -7,7 +7,7 @@ export const asyncAction = (type) => ({
     type: type.SUCCESS,
     payload,
   }),
-  fail: (error) => ({
+  fail: error => ({
     type: type.FAIL,
     payload: { error },
   }),

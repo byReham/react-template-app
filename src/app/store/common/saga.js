@@ -1,4 +1,4 @@
-import { call, put } from "redux-saga/effects";
+import { call, put } from 'redux-saga/effects';
 
 export const asyncSaga = (api, action) => {
   return function* aSaga({ payload }) {
