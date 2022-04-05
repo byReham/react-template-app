@@ -1,13 +1,29 @@
-import styles from './index.module.scss'
+import { Provider } from "react-redux";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-function App() {
+import Footer from "./containers/Footer";
+import Header from "./containers/Header";
+import Main from "./containers/Main";
+import { store } from "./store";
+
+const App = () => {
   return (
-    <div className={styles.app}>
-      <header className={styles.header}>Hello world!!</header>
-      <main className={styles.main}>Content</main>
-      <footer className={styles.footer}>Footer</footer>
-    </div>
-  )
-}
+    <BrowserRouter>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Layout />}></Route>
+        </Routes>
+      </Provider>
+    </BrowserRouter>
+  );
+};
 
-export default App
+const Layout = () => (
+  <>
+    <Header />
+    <Main />
+    <Footer />
+  </>
+);
+
+export default App;
