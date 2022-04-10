@@ -1,3 +1,9 @@
 .header {
-  min-height: 60px;
+  height: var(--heading-height);
+
+  .toggleIcon {
+    font-size: 2em;
+    margin-right: 1em;
+    cursor: pointer;
+  }
 }

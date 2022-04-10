@@ -1,40 +1,42 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link as RouterLink, Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Header = () => (
-  <>
-    <Navbar
-      bg="dark"
-      variant="dark">
-      <Container>
+import { Link as RouterLink } from 'react-router-dom';
+
+import classnames from 'classnames';
+import Navbar from 'react-bootstrap/Navbar';
+import { AiFillRightSquare, AiFillLeftSquare } from 'react-icons/ai';
+
+import styles from './index.module.scss';
+
+const Header = ({ isMenuOpen, onClickToggleIcon }) => {
+  return (
+    <>
+      <Navbar
+        className={classnames(styles.header, { [styles.active]: !isMenuOpen })}
+        bg="dark"
+        variant="dark">
+        <div
+          className={classnames('text-white', styles.toggleIcon)}
+          onClick={onClickToggleIcon}>
+          {isMenuOpen ? <AiFillLeftSquare /> : <AiFillRightSquare />}
+        </div>
         <Navbar.Brand
           as={RouterLink}
           to="/">
           Brestmoda
         </Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link
-            as={RouterLink}
-            to="/">
-            Home
-          </Nav.Link>
-          <Nav.Link
-            as={RouterLink}
-            to="#features">
-            Features
-          </Nav.Link>
-          <Nav.Link
-            as={RouterLink}
-            to="#pricing">
-            Pricing
-          </Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
-    <Outlet />
-  </>
-);
+      </Navbar>
+    </>
+  );
+};
+
+Header.propTypes = {
+  onClickToggleIcon: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  isMenuOpen: false,
+};
 
 export default Header;

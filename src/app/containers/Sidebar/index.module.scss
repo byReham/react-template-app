@@ -1,0 +1,39 @@
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  height: var(--sidebar-height);
+
+  &:not(.active) {
+    display: none;
+  }
+
+  .heading {
+    height: var(--heading-height);
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1em;
+    outline: solid;
+  }
+
+  .navLinkGroup {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .navLinkItem {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    text-align: inherit;
+    text-decoration: none;
+
+    &:hover, &:active, &.active {
+      background-color: #A47551;
+    }
+  }
+}
