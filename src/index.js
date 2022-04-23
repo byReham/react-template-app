@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createRoot } from 'react-dom/client';
 
-import App from './app';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import './assets/styles/theme.scss';

@@ -1,0 +1,260 @@
+.btn-input-help {
+  background-color: $body-bg;
+  border-color: $input-border-color;
+  border-left: none;
+  color: $input-border-color;
+  padding: 0.375rem 0.75rem;
+}
+
+.btn {
+  @media (max-width: 576px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.btn-input-help.is-invalid {
+  border-color: $form-feedback-invalid-color;
+
+  & svg {
+    color: $form-feedback-invalid-color;
+  }
+}
+
+.form-label {
+  color: var(--label-color, inherit);
+  display: inline-flex;
+  flex-wrap: nowrap;
+  margin-bottom: $label-margin-bottom;
+  max-width: 100%;
+
+  @media (max-width: 576px) {
+    display: block;
+  }
+
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (max-width: 576px) {
+      white-space: initial;
+
+      .invisible & {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &--group {
+    margin-bottom: -1.5 * $font-size-base;
+    position: relative;
+    z-index: 1;
+  }
+
+  &.invisible {
+    overflow: hidden;
+  }
+}
+
+.flex-label {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    font-size: 12px;
+  }
+}
+
+.form-btn-outline {
+  @extend .btn-outline-light;
+}
+
+.form-btn-fill {
+  @extend .btn-light;
+
+  background-color: #fff;
+  border-color: #fff;
+  width: 100%;
+}
+
+.form-button {
+  display: block;
+  min-width: 100%;
+}
+
+.form-error.invalid-feedback {
+  display: block;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  opacity: 30%;
+}
+
+.custom-select:disabled ~ .form-label {
+  opacity: 30%;
+}
+
+.custom-select {
+  position: relative;
+  z-index: 1;
+
+  option {
+    color: #313d4d;
+
+    &:disabled {
+      display: none;
+    }
+  }
+}
+
+.select-placeholder {
+  bottom: 0;
+  color: $input-placeholder-color;
+  left: 0;
+  line-height: 23px;
+  margin: $input-btn-padding-y $input-btn-padding-x;
+  margin-right: $custom-select-indicator-padding + $input-btn-padding-x;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  top: $line-height-base * $font-size-base + $label-margin-bottom;
+  white-space: nowrap;
+}
+
+.custom-select:valid + .select-placeholder {
+  display: none;
+}
+
+.file-field__label {
+  width: 100%;
+
+  &--hidden {
+    display: block;
+    opacity: 0%;
+    overflow: hidden;
+    visibility: hidden;
+    white-space: nowrap;
+  }
+}
+
+.file-field__input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &::-webkit-file-upload-button {
+    cursor: pointer;
+  }
+
+  &:hover + .btn-outline-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
+  }
+}
+
+.file-field__wrapper {
+  align-items: center;
+  height: calc(1.5em + 0.75rem + 2px);
+  max-width: 100%;
+  position: relative;
+
+  &--multi {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  &-node {
+    align-items: center;
+    display: flex;
+    height: calc(1.5em + 0.75rem + 2px);
+    margin-top: 10px;
+    max-width: 100%;
+    min-width: 100%;
+    position: relative;
+  }
+}
+
+.file-field__name {
+  color: #495d80;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (min-width: 576px) {
+    color: #4c5668;
+  }
+}
+
+.file-field__icon {
+  color: $secondary;
+  cursor: pointer;
+  position: relative;
+}
+
+.file-field__invalid-feedback {
+  word-break: break-word;
+}
+
+.form-actions__info {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 18px;
+  max-width: 455px;
+}
+
+.fields-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+
+  &__label {
+    width: 100%;
+  }
+
+  &__item {
+    flex-grow: var(--grow, 1);
+    width: var(--width, 0);
+  }
+}
+
+.form-text,
+.invalid-feedback {
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+.custom-radio {
+  margin-bottom: 1rem;
+
+  .custom-control-label {
+    line-height: 1.125rem;
+
+    .secondary-label {
+      font-size: 0.75rem;
+      line-height: inherit;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      background-color: transparent;
+      border-color: $light;
+      border-width: 2px;
+      color: $light;
+    }
+
+    &::after {
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'><circle r='4' fill='#{str-replace('' + $light, '#', '%23')}'/></svg>");
+    }
+  }
+}

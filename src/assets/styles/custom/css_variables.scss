@@ -1,5 +1,31 @@
 :root {
+  --primary: #005792;
+  --secondary: #5cb0ff;
+  --dark: #13191d;
+  --light: #d0dbdc;
+  --black: #090d0f;
+  --white: #f8f9fa;
+  --info: #495057;
   --heading-height: 60px;
   --sidebar-width: 240px;
   --sidebar-height: 100vh;
+  --sidebar-item-active: #f6f6e9;
+  --sidebar-responsibility: #ec692c;
+  --widget-shadow-color: 115,162,208;
+  --body-bg: #f9fbfd;
+  --navbar-bg: #f9fbfd;
+  --navbar-color: var(--dark);
+  --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color),0.1),0 0 15px rgba(var(--widget-shadow-color),0.06);
+  --badge-item: #fff;
+  --badge-item-color: var(--badge-item);
+  --important-notification-color: #f55d5d;
+  --important-notification: var(--important-notification-color);
+  --update-notification-color: #fd5f00;
+  --update-notification: var(--update-notification-color);
+  --sidebar-item-active-color: var(--sidebar-item-active);
+  --sidebar-bg-color: #002b49;
+  --chat-sidebar-bg-color: var(--sidebar-bg-color);
+  --sidebar-action-bg: #042338;
+  --sidebar-progress-bg-color: var(--sidebar-action-bg);
+  --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
 }

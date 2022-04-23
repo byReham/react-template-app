@@ -1,0 +1,17 @@
+.header {
+  background: var(--navbar-bg);
+  box-shadow: var(--navbar-shadow);
+  transition: background-color .2s ease,margin .2s ease;
+  height: var(--heading-height);
+  color: var(--navbar-color);
+
+  .toggleIcon {
+    cursor: pointer;
+    font-size: 2em;
+    margin-right: 1em;
+  }
+
+  .brand {
+    color: var(--navbar-color);
+  }
+}

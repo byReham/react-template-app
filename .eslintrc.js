@@ -49,7 +49,7 @@ module.exports = {
         singleAttributePerLine: true,
       },
     ],
-    quotes: [2, 'single'],
+    quotes: [2, 'single', { avoidEscape: true }],
     semi: [2, 'always'],
     'no-undef': 'off',
     'no-console': 1,

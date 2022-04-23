@@ -1,94 +1,101 @@
 // https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
 
-$primary: #A47551;
-$light: #D0DBDC;
-$secondary: #324C65;
-$dark: #523A28;
+$light: #d0dbdc;
+$dark: #13191d;;
+$primary: #005792;
+$secondary: #5cb0ff;
+$black: #090d0f;
+$white: #f8f9fa;
+
 
 $theme-colors: (
-  "primary": $primary,
-  "light": $light,
-  "secondary": $secondary,
-  "dark": $dark,
-  "danger": #ff4136
+  'primary': $primary,
+  'light': $light,
+  'secondary': $secondary,
+  'dark': $dark,
+  'danger': #ff4136
 );
+// btn-color: #1a86d0;
+// #939588
+// #7b7b7b
+// #61463b
 
-// $info: #475469;
-// $gray-100: #D7E4EE;
+$info: #495057;
+$gray-100: #798892;
 // $secondary-bg: $secondary;
-// $success: #1F8A2A;
-// $danger: #DF1344;
-//
-// $body-bg: #00102C;
-// $body-color: #92ACD2;
-// $font-family-base: 'Poppins', sans-serif;
-// $headings-color: #fff;
-// $headings-font-weight: 400;
-// $headings-font-family: 'Roboto Slab', serif;
-// $headings-font-family-secondary: 'Poppins', sans-serif;
-// $hr-border-color: #6A83A8;
-// $hr-border-width: 2px;
-// $font-size-base: 0.875rem;
-// $line-height-base: 1.5;
-// $grid-gutter-width: 20px;
-// $container-max-widths: (
-//   sm: 540px,
-//   md: 720px,
-//   lg: 960px,
-//   xl: 1200px
-// ) !default;
-// $h1-font-size: 32px;
-// $h2-font-size: 18px;
-// $small-font-size: 12px;
-// $text-muted: #6A83A8;
-//
-// $navbar-light-color: #25416B;
-// $navbar-toggler-padding-x: 0;
-// $navbar-light-brand-color: $navbar-light-color;
-// $navbar-light-toggler-border-color: transparent;
-//
-// $popover-font-size: 12px;
-// $popover-body-color: #313D4D;
-// $popover-border-radius: 2px;
-// $popover-body-padding-y: 8px;
-// $popover-body-padding-x: 12px;
-//
-// $link-color: $secondary;
-// $link-decoration: underline;
-// $link-hover-decoration: none;
-//
-// // $modal-inner-padding: 24px var(--modal-inner-padding);
-// // $modal-header-padding-x: var(--modal-inner-padding);
-// $modal-backdrop-bg: #00102C;
-// $modal-backdrop-opacity: 0.5;
-// $modal-content-bg: #0D213F;
-// $modal-dialog-margin-y-sm-up: 100px;
-// $modal-md: var(--modal-width);
-// $modal-sm: var(--modal-width);
-//
-// $btn-disabled-opacity: 0.4;
-// $input-bg: transparent;
-// $input-color: #FFF;
-// $input-border-color: #495D80;
-// $input-border-radius: 2px;
-// $input-disabled-bg: $body-bg;
-// $custom-select-disabled-bg: $input-disabled-bg;
-// $input-placeholder-color: rgba(255,255,255,.3);
-// $btn-padding-x: 34px;
-// $btn-font-size-sm: 14px;
-// $input-btn-font-family: $font-family-base;
-// $input-btn-padding-y: .375rem;
-// $input-btn-padding-x: .75rem;
-// $form-grid-gutter-width: 20px;
-// $form-feedback-icon-valid: none;
-// $form-feedback-icon-invalid: none;
-// $label-margin-bottom: 0.25rem;
-// $custom-select-indicator-padding: 1rem;
-// $custom-control-indicator-border-color: $input-border-color;
-// $custom-control-indicator-checked-bg: $light;
-// $custom-checkbox-indicator-icon-checked: url('data:image/svg+xml,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.85714 7L9 1" stroke="#001B3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-// $custom-control-indicator-checked-color: #001B3C;
-// $card-border-radius: 0;
-// $card-cap-bg: #031633; // #031636;
-// $card-color: $body-color;
-// $card-bg: $body-bg;
+$success: #1f8a2a;
+$danger: #df1344;
+
+$body-bg: #f9fbfd;
+$body-color: #13191d;
+$font-family-base: 'Poppins', sans-serif;
+$headings-color: #090d0f;
+$headings-font-weight: 400;
+$headings-font-family: 'Roboto Slab', serif;
+$headings-font-family-secondary: 'Poppins', sans-serif;
+$hr-border-color: #6a83a8;
+$hr-border-width: 2px;
+$font-size-base: 0.875rem;
+$line-height-base: 1.5;
+$grid-gutter-width: 20px;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+$h1-font-size: 32px;
+$h2-font-size: 18px;
+$small-font-size: 12px;
+$text-muted: #6a83a8;
+
+$navbar-light-color: #25416b;
+$navbar-toggler-padding-x: 0;
+$navbar-light-brand-color: $navbar-light-color;
+$navbar-light-toggler-border-color: transparent;
+
+$popover-font-size: 12px;
+$popover-body-color: #313d4d;
+$popover-border-radius: 2px;
+$popover-body-padding-y: 8px;
+$popover-body-padding-x: 12px;
+
+$link-color: $secondary;
+$link-decoration: underline;
+$link-hover-decoration: none;
+
+// $modal-inner-padding: 24px var(--modal-inner-padding);
+// $modal-header-padding-x: var(--modal-inner-padding);
+$modal-backdrop-bg: #00102c;
+$modal-backdrop-opacity: 0.5;
+$modal-content-bg: #0d213f;
+$modal-dialog-margin-y-sm-up: 100px;
+$modal-md: var(--modal-width);
+$modal-sm: var(--modal-width);
+
+$btn-disabled-opacity: 0.4;
+$input-bg: transparent;
+$input-color: #fff;
+$input-border-color: #495d80;
+$input-border-radius: 2px;
+$input-disabled-bg: $body-bg;
+$custom-select-disabled-bg: $input-disabled-bg;
+$input-placeholder-color: RGB(255 255 255 / 30%);
+$btn-padding-x: 34px;
+$btn-font-size-sm: 14px;
+$input-btn-font-family: $font-family-base;
+$input-btn-padding-y: 0.375rem;
+$input-btn-padding-x: 0.75rem;
+$form-grid-gutter-width: 20px;
+$form-feedback-icon-valid: none;
+$form-feedback-icon-invalid: none;
+$label-margin-bottom: 0.25rem;
+$custom-select-indicator-padding: 1rem;
+$custom-control-indicator-border-color: $input-border-color;
+$custom-control-indicator-checked-bg: $light;
+$custom-checkbox-indicator-icon-checked: url('data:image/svg+xml,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.85714 7L9 1" stroke="#001B3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+$custom-control-indicator-checked-color: #001b3c;
+$card-border-radius: 0;
+$card-cap-bg: #031633; // #031636;
+$card-color: $body-color;
+$card-bg: $body-bg;

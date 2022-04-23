@@ -1,14 +1,36 @@
-import axios from 'axios';
+import AXIOS from 'axios';
+
+import urls from '../../api/urls';
+import API_CODES from '../../constants';
 
 import buildApiClient from './client';
 
-export default buildApiClient(
-  axios.create({
-    baseURL: `${process.env.REACT_APP_BASE_API_URL}/api`,
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    withCredentials: true,
-  }),
+const axios = AXIOS.create({
+  baseURL: `${process.env.REACT_APP_BASE_API_URL}`,
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+});
+
+axios.interceptors.request.use(config => {
+  const jwt = localStorage.getItem('jwt');
+
+  return jwt ? { ...config, headers: { Authorization: jwt } } : config;
+});
+
+axios.interceptors.response.use(
+  res => res,
+  error => {
+    if (error.code === 'ECONNABORTED' || !error.response) {
+      Object.assign(error, { response: { statusText: 'Network timeout error' } });
+    } else if (error.response.code === API_CODES.unauthorized) {
+      localStorage.removeItem('jwt');
+      window.location.href = urls.users.signIn;
+    }
+
+    throw error;
+  },
 );
+
+export default buildApiClient(axios);
