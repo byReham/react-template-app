@@ -8,8 +8,8 @@
   }
 
   .heading {
-    align-items: center;
     display: flex;
+    align-items: flex-end;
     height: var(--heading-height);
     outline: solid;
     padding-bottom: 0.5rem;
@@ -31,11 +31,17 @@
     text-align: inherit;
     text-decoration: none;
     width: 100%;
+    color: var(--light);
 
     &:hover,
     &:active,
     &.active {
-      background-color: #a47551;
+      background-color: var(--white);
+      color: var(--dark);
     }
+  }
+
+  .logout {
+    cursor: pointer;
   }
 }

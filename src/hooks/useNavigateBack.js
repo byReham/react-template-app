@@ -1,13 +1,10 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import urls from '../api/urls';
-
-const useNavigateBack = () => {
+const useNavigateBack = path => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const path = location.state?.from ?? urls.dashboard;
+  const location = path ?? useLocation().state?.from ?? '/';
 
-  const navigateBack = () => navigate(path, { replace: true });
+  const navigateBack = () => navigate(location, { replace: false });
 
   return navigateBack;
 };

@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import BootstrapForm from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-import TextField from '../../../components/Form/TextField';
+import FormikTextField from '../../../components/Form/FormikTextField';
 import useNavigateBack from '../../../hooks/useNavigateBack';
 import { loginUser } from '../../../store/auth';
 
@@ -27,7 +27,7 @@ const Form = ({ ...formikBag }) => {
   return (
     <BootstrapForm>
       <Row className="mb-3">
-        <TextField
+        <FormikTextField
           formGroupProps={{ as: Col, md: 12 }}
           name="email"
           label="Email"
@@ -37,7 +37,7 @@ const Form = ({ ...formikBag }) => {
       </Row>
 
       <Row className="mb-3">
-        <TextField
+        <FormikTextField
           formGroupProps={{ as: Col, md: 12 }}
           name="password"
           label="Password"

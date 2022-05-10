@@ -13,7 +13,7 @@ const PrivateRoute = ({ component: Component, layout: Layout, ...rest }) => {
   const currentUser = useSelector(({ auth }) => auth.currentUser);
   const isAuth = localStorage.getItem('jwt');
   const dispatch = useDispatch();
-  const navigateBack = useNavigateBack();
+  const navigateBack = useNavigateBack(location);
 
   if (!isAuth) {
     return (

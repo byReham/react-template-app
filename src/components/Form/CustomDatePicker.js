@@ -7,11 +7,11 @@ import DatePicker from 'react-datepicker';
 
 import { DATE_FORMAT } from '../../constants';
 
-import TextField from './TextField';
+import FormikTextField from './FormikTextField';
 
 const DatePickerInput = forwardRef((props, ref) => {
   return (
-    <TextField
+    <FormikTextField
       {...props}
       inputRef={ref}
       type="text"

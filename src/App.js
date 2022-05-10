@@ -2,9 +2,14 @@ import { Provider } from 'react-redux';
 
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
+import moment from 'moment';
+import localization from 'moment/locale/ru';
+
 import { authProtectedRoutes, publicRoutes } from './routes';
 import PrivateRoute from './routes/private-route';
 import { store } from './store';
+
+moment.updateLocale('ru', localization);
 
 const App = () => {
   return (

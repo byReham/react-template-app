@@ -1,7 +1,7 @@
 import * as actions from './actions';
 
 export const loginUser = actions.loginUser.run;
-export const logOutUser = actions.logOutUser.run;
+export const logoutUser = actions.logoutUser.run;
 // export const getUsers = actions.getUsers.run;
 // export const createUser = actions.createUser.run;
 // export const deleteUser = actions.deleteUser.run;

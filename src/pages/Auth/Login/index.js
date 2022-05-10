@@ -7,14 +7,12 @@ import styles from './index.module.scss';
 
 const Login = () => (
   <>
-    <div className={classnames('page-content', styles.root)}>
-      <Container
-        fluid
-        className="justify-content-md-center">
-        <h3 className="text-white mb-5">Sign In</h3>
-        <Form />
-      </Container>
-    </div>
+    <Container
+      className={classnames(styles.root, 'justify-content-md-center')}
+      fluid="md">
+      <h3 className="text-white mb-5">Sign In</h3>
+      <Form />
+    </Container>
   </>
 );
 

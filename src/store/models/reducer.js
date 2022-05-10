@@ -1,31 +1,28 @@
 import { makeReducer } from '../common';
 
-import { LOGIN_USER, LOGOUT_USER } from './actionTypes';
+import { MODELS_INDEX } from './actionTypes';
 
 export default makeReducer(
   {
-    [LOGIN_USER.RUN]: state => ({
+    [MODELS_INDEX.RUN]: state => ({
       ...state,
       isLoading: true,
       error: null,
     }),
-    [LOGIN_USER.SUCCESS]: (state, { payload }) => ({
+    [MODELS_INDEX.SUCCESS]: (state, { payload }) => ({
       ...state,
-      currentUser: payload,
+      index: payload,
       isLoading: false,
       error: null,
     }),
-    [LOGIN_USER.FAIL]: (state, { payload: { error } }) => ({
+    [MODELS_INDEX.FAIL]: (state, { payload: { error } }) => ({
       ...state,
       isLoading: false,
       error,
     }),
-    [LOGOUT_USER.SUCCESS]: state => ({
-      ...state,
-    }),
   },
   {
-    currentUser: null,
+    index: [],
     isLoading: false,
     error: null,
   },

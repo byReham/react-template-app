@@ -1,30 +1,30 @@
 import PropTypes from 'prop-types';
 
-import { Link as RouterLink } from 'react-router-dom';
+// import { Link as RouterLink } from 'react-router-dom';
 
 import classnames from 'classnames';
+import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { AiFillRightSquare, AiFillLeftSquare } from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 import styles from './index.module.scss';
 
 const Header = ({ isMenuOpen, onClickToggleIcon, sidebar }) => {
   return (
     <>
-      <Navbar className={classnames(styles.header)}>
-        {sidebar ? (
-          <div
-            className={classnames('text-dark', styles.toggleIcon)}
-            onClick={onClickToggleIcon}>
-            {isMenuOpen ? <AiFillLeftSquare /> : <AiFillRightSquare />}
-          </div>
-        ) : null}
-        <Navbar.Brand
-          className={styles.brand}
-          as={RouterLink}
-          to="/">
-          Brestmoda
-        </Navbar.Brand>
+      <Navbar className={classnames('pd-3', styles.header)}>
+        <Container
+          className={classnames(styles.root)}
+          fluid="md">
+          <h1 className="m-0">ЗАКАЗЫ</h1>
+          {sidebar ? (
+            <div
+              className={classnames('icon-primary', styles.toggleIcon)}
+              onClick={onClickToggleIcon}>
+              {isMenuOpen ? <AiOutlineMenu /> : <AiOutlineMenu />}
+            </div>
+          ) : null}
+        </Container>
       </Navbar>
     </>
   );

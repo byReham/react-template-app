@@ -4,6 +4,7 @@
   height: 100vh;
   overflow: hidden;
   width: 100vw;
+  flex-flow: row-reverse;
 }
 
 .main {
@@ -13,5 +14,6 @@
 }
 
 .content {
-  padding: 2em;
+  padding-top: 61px;
+  overflow: auto;
 }

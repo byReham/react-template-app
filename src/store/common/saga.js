@@ -5,10 +5,10 @@ export const asyncSaga = (api, action) => {
     try {
       const response = yield call(api, payload);
 
-      yield put(action.success(response.data.data));
+      yield put(action.success(response.data));
     } catch (error) {
       console.error(error);
-      yield put(action.fail(error));
+      yield put(action.fail(error.response.data || error.response.statusText));
     }
   };
 };

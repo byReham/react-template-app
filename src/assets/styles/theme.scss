@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
-@import './custom/bootstrap_theming';
-@import './bootstrap';
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+@import 'variables';
+
+/* import bootstrap to set changes */
+@import '~bootstrap/scss/bootstrap';
 @import './app';
+@import 'css_variables';
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,

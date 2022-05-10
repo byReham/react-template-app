@@ -2,7 +2,7 @@ import { takeEvery, call, put } from 'redux-saga/effects';
 
 import { users } from '../../api';
 
-import { loginUser, logOutUser } from './actions';
+import { loginUser, logoutUser } from './actions';
 import { LOGIN_USER, LOGOUT_USER } from './actionTypes';
 
 function* loginSaga({ payload: { params, navigateBack } }) {
@@ -26,9 +26,9 @@ function* loginSaga({ payload: { params, navigateBack } }) {
 
 function* logOutSaga({ payload: { navigateBack } }) {
   try {
-    const response = yield call(users.logOutUser);
+    const response = yield call(users.logoutUser);
 
-    yield put(logOutUser.success(response));
+    yield put(logoutUser.success(response));
     localStorage.removeItem('jwt');
     navigateBack();
   } catch (error) {

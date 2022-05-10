@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 import classnames from 'classnames';
-import { useField } from 'formik';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -10,7 +9,7 @@ import Popover from 'react-bootstrap/Popover';
 
 import CustomLabel from './CustomLabel';
 
-const TextField = ({
+const FormikTextField = ({
   label,
   labelHidden,
   name,
@@ -20,11 +19,13 @@ const TextField = ({
   format,
   required,
   inputRef,
+  touched,
+  error,
+  onChange,
+  value,
   ...rest
 }) => {
-  const [field, meta, { setValue }] = useField({ name });
-
-  const errorMessage = meta.touched && meta.error;
+  const errorMessage = touched && error;
   const isInvalid = errorMessage;
 
   const handleChange = ({ target }) => {
@@ -38,7 +39,7 @@ const TextField = ({
       newValue = target.value.match(format)?.join('') || ''; // join func by default has ',' as argument
     }
 
-    setValue(newValue);
+    onChange(newValue);
   };
 
   return (
@@ -56,8 +57,7 @@ const TextField = ({
       )}
       <InputGroup className={{ 'is-invalid': isInvalid }}>
         <Form.Control
-          value={meta.value}
-          {...field}
+          value={value}
           {...rest}
           ref={inputRef}
           onChange={handleChange}
@@ -93,8 +93,8 @@ const TextField = ({
   );
 };
 
-TextField.propTypes = {
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+FormikTextField.propTypes = {
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.oneOf([null])]),
   labelHidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
   tooltip: PropTypes.string,
@@ -103,16 +103,24 @@ TextField.propTypes = {
   formGroupProps: PropTypes.object,
   format: PropTypes.instanceOf(RegExp),
   inputRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.elementType })]),
+  onChange: PropTypes.func.isRequired,
+  touched: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
+  value: PropTypes.string,
 };
 
-TextField.defaultProps = {
+FormikTextField.defaultProps = {
   labelHidden: false,
+  label: null,
   tooltip: null,
   helpText: null,
   required: false,
   formGroupProps: {},
   format: null,
   inputRef: null,
+  touched: false,
+  error: null,
+  value: '',
 };
 
-export default TextField;
+export default FormikTextField;

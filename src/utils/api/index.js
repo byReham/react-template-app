@@ -1,12 +1,12 @@
 import AXIOS from 'axios';
 
 import urls from '../../api/urls';
-import API_CODES from '../../constants';
+import { API_CODES } from '../../constants';
 
 import buildApiClient from './client';
 
 const axios = AXIOS.create({
-  baseURL: `${process.env.REACT_APP_BASE_API_URL}`,
+  baseURL: `${process.env.REACT_APP_BASE_API_URL}/core/admin`,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -24,7 +24,7 @@ axios.interceptors.response.use(
   error => {
     if (error.code === 'ECONNABORTED' || !error.response) {
       Object.assign(error, { response: { statusText: 'Network timeout error' } });
-    } else if (error.response.code === API_CODES.unauthorized) {
+    } else if (error.response.status === API_CODES.unauthorized) {
       localStorage.removeItem('jwt');
       window.location.href = urls.users.signIn;
     }
